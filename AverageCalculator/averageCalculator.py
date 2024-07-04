@@ -21,7 +21,7 @@ class AverageCalulator(Resource):
         data = {
 "companyName": "KPCompany",
 "clientID": "afbac3d8-0a81-4c97-8031-bcb7bb3ea3ee",
-"clientSecret": "ulfBXOzXtHabtjle",
+"clientSecret": "<secret goes here>",
 "ownerName": "Koushik KP",
 "ownerEmail": "koushikkp2003@gmail.com",
 "accessCode": "JXUHXY",

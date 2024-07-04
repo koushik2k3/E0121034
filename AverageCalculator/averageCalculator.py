@@ -31,8 +31,6 @@ class AverageCalulator(Resource):
         return output
     
 
-'''create a data structure with size 10 and that takes in values but ignores duplicates and when inserting if 
-size is breached remove oldest element and add new element'''
 
 api.add_resource(AverageCalulator, '/numbers/<string:numberid>')
 

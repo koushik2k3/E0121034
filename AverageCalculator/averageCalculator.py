@@ -11,15 +11,22 @@ limitedQueue = LimitedQueue(10)
 class AverageCalulator(Resource):
     def get(self, numberid):
         if numberid == 'e':
-            headers = {
-    'Authorization': 'Bearer <Token>'
-        }
-            response = requests.get('http://20.244.56.144/test/primes', headers=headers)
-            numbers = response.json()['numbers']
-            prevState = limitedQueue.printer()
-            for i in numbers:
-                limitedQueue.add(i)
-            currState = limitedQueue.printer()
+            noType = 'even'
+        elif numberid == 'p':
+            noType = 'primes'
+        elif numberid == 'f':
+            noType = 'fibo'
+        elif numberid == 'r':
+            noType = 'rand'
+        headers = {
+'Authorization': 'Bearer <Token>'
+}
+        response = requests.get(f'http://20.244.56.144/test/{noType}', headers=headers)
+        numbers = response.json()['numbers']
+        prevState = limitedQueue.printer()
+        for i in numbers:
+            limitedQueue.add(i)
+        currState = limitedQueue.printer()
 
         output = {
         "numbers": numbers,
